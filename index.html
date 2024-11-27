@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Love is in the Air</h1>
+        <div class="heart">
+            ❤️
+        </div>
+        <p class="message">check your luck you you have one chance.</p>
+        <button id="love-button" class="btn" onclick="showLoveMessage()">Spread Love</button>
+        
+        <!-- New section to display love message -->
+        <div id="love-message" class="love-message">
+            <!-- The message will appear here when the button is clicked -->
+        </div>
+        
+        <!-- WhatsApp Share Button -->
+        <div class="whatsapp-container">
+            <a href="https://wa.me/?text=Hey%2C%20I%20just%20found%20this%20amazing%20website%20that%20is%20all%20about%20love!%20Check%20it%20out%20here%3A%20[insert%20your%20website%20link%20here]" target="_blank">
+                <button class="whatsapp-btn">
+                    Send Love via WhatsApp
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript function to show a love message when the button is clicked
+        function showLoveMessage() {
+            const messageDiv = document.getElementById("love-message");
+            const loveButton = document.getElementById("love-button");
+
+            // Display a random happy message when the button is clicked
+            const messages = [
+                "1.i hate you",
+                "2.i can,t to make relationship with you",
+                "3.i want you to be my future 🫴🧎‍➡️👑",
+                "4.iam sorry i have relationship",
+                "5.my queen i love you 👑💖",
+                "6.if you love me i love you ",
+                "7.never i don't love with you",
+                "8.you are my bird",
+                "9.you will be my succes",
+                "10.i will marry with you",
+                "11.iam sour you my first relationship",
+                "12.he datting other girls",
+                "13.she is datting other boys",
+                "14.I can't marry you",
+                "15.you are very beautiful",
+
+            ];
+
+            // Pick a random message
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+            // Display the message in the love-message div
+            messageDiv.textContent = randomMessage;
+
+            // Change the button text to "I love you, my bird"
+            loveButton.textContent = "I love you, my bird";
+        }
+
+        // Change the button text after 5 seconds if not clicked
+        setTimeout(() => {
+            const loveButton = document.getElementById("love-button");
+
+            // Change the text of the button to "I love you, my bird"
+            if (loveButton.textContent === "spread love") {
+                loveButton.textContent = "I love you, my bird";
+            }
+        }, 5000); // 5000 ms = 5 seconds
+    </script>
+</body>
+</html>
